@@ -3,23 +3,10 @@ kind: PersistentVolume
 metadata:
   name: recipe-pv
 spec:
-  storageClassName: standard
+  storageClassName: local-path
   capacity:
     storage: 1Mi
   accessModes:
     - ReadOnlyMany
   hostPath:
-    path: "/data/recipe"
----
-apiVersion: v1
-kind: PersistentVolume
-metadata:
-  name: file-content-monitor-pv
-spec:
-  storageClassName: standard
-  capacity:
-    storage: 1Mi
-  accessModes:
-    - ReadWriteMany
-  hostPath:
-    path: "/data/file_content_monitor"
+    path: "/mnt/c/recipe"

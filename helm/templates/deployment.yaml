@@ -31,9 +31,6 @@ spec:
         - name: recipe-storage
           persistentVolumeClaim:
             claimName: recipe-pvc
-        - name: file-content-monitor-storage
-          persistentVolumeClaim:
-            claimName: file-content-monitor-pvc
       containers:
         - name: {{ .Chart.Name }}
           securityContext:
@@ -57,8 +54,6 @@ spec:
           volumeMounts:
             - mountPath: "project/recipe"
               name: recipe-storage
-            - mountPath: "project/file_content_monitor"
-              name: file-content-monitor-storage
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
       {{- with .Values.nodeSelector }}

@@ -8,14 +8,3 @@ spec:
   resources:
     requests:
       storage: 1Mi
----
-apiVersion: v1
-kind: PersistentVolumeClaim
-metadata:
-  name: file-content-monitor-pvc
-spec:
-  accessModes:
-    - ReadWriteMany
-  resources:
-    requests:
-      storage: 1Mi
