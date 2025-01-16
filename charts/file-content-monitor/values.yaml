@@ -1,8 +1,8 @@
 replicaCount: 1
 image:
-  repository: ''
+  repository: hajlesilesia/file-content-monitor
   pullPolicy: IfNotPresent
-  tag: ''
+  tag: 1.0.1
 imagePullSecrets: []
 nameOverride: ''
 fullnameOverride: ''
